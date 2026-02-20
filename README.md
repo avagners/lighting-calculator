@@ -1,192 +1,160 @@
-# 💡 Калькулятор освещённости
+# 💡 Lighting Calculator
 
-Современное одностраничное приложение (SPA) для расчёта идеального освещения помещений с потрясающим атмосферным дизайном.
+Modern single-page application (SPA) for calculating ideal room lighting with stunning atmospheric design.
 
-![Калькулятор освещённости](./preview.png)
+![Lighting Calculator](./preview.png)
 
-## ✨ Особенности
+## ✨ Features
 
-- **Тактильный дизайн** — стеклянный морфизм, плавные анимации, светящиеся эффекты
-- **Расчёт по СНиП** — формулы согласно СНиП 23-05-95 «Естественное и искусственное освещение»
-- **Визуализация** — схема комнаты с расстановкой светильников в реальном времени
-- **Адаптивность** — полностью работает на мобильных устройствах
-- **Сохранение данных** — параметры сохраняются в localStorage
-- **Shareable URL** — поделитесь расчётом ссылкой
-- **Покрытие тестами** — 118 тестов для бизнес-логики, хуков и компонентов
+- **Tactile Design** — glassmorphism, smooth animations, glowing effects
+- **SNiP Compliant** — calculations based on SNiP 23-05-95 "Natural and Artificial Lighting"
+- **Visualization** — room layout with real-time fixture placement
+- **Responsive** — works perfectly on mobile devices
+- **Data Persistence** — parameters saved to localStorage
+- **Shareable URL** — share your calculations via link
+- **Test Coverage** — 118 tests for business logic, hooks, and components
 
-## 🧪 Тестирование
+## 🧪 Testing
 
-Приложение покрыто тестами (118 тестов):
+The application is fully tested (118 tests):
 
 ```bash
-# Запуск всех тестов
+# Run all tests
 npm run test
 
-# Запуск с UI
+# Run with UI
 npm run test:ui
 
-# Запуск с покрытием
+# Run with coverage
 npm run test:coverage
 ```
 
-Подробнее см. [TESTING.md](./TESTING.md)
+See [TESTING.md](./TESTING.md) for details.
 
-## 🚀 Технологии
-
-- **React 18** + TypeScript
-- **Tailwind CSS v4** — стилизация с кастомной темой
-- **Framer Motion** — плавные анимации и микро-взаимодействия
-- **Lucide React** — минималистичные иконки
-- **Vite** — быстрая сборка и HMR
-
-## 📦 Установка
+## 🚀 Quick Start
 
 ```bash
-# Клонирование репозитория
-cd lighting-calculator
-
-# Установка зависимостей
+# Install dependencies
 npm install
 
-# Запуск dev-сервера
+# Start dev server
 npm run dev
 
-# Сборка для продакшена
+# Build for production
 npm run build
 
-# Предпросмотр продакшен-сборки
-npm run preview
+# Run tests
+npm run test
 ```
 
-## 🎨 Дизайн-система
+## 🎨 Design System
 
-### Цветовая палитра
+### Color Palette
 
-| Цвет | Значение | Описание |
-|------|----------|----------|
-| `#0A0A0A` | Background | Глубокий чёрный фон |
-| `#FFB347` | Primary Warm | Тёплый янтарный акцент |
-| `#4A90E2` | Primary Cool | Холодный синий акцент |
+| Color | Value | Description |
+|-------|-------|-------------|
+| `#0A0A0A` | Background | Deep black background |
+| `#FFB347` | Primary Warm | Warm amber accent |
+| `#4A90E2` | Primary Cool | Cool blue accent |
 
-### Эффекты
+### Effects
 
-- **Glassmorphism** — полупрозрачные карточки с backdrop-blur
-- **Glow Shadows** — светящиеся тени вместо обычных
-- **Animated Background** — плавающие световые пятна на фоне
+- **Glassmorphism** — semi-transparent cards with backdrop-blur
+- **Glow Shadows** — glowing shadows instead of regular ones
+- **Animated Background** — floating light spots
 
-## 🧮 Формула расчёта
-
-Расчёт производится по формуле:
-
-```
-Ф = (Е × S × K × Z) / η
-```
-
-Где:
-- **Ф** — световой поток одной лампы (лм)
-- **Е** — норма освещённости (лк) — зависит от типа помещения
-- **S** — площадь помещения (м²)
-- **K** — коэффициент запаса (1.2)
-- **Z** — коэффициент неравномерности (1.1)
-- **η** — коэффициент использования светового потока
-
-### Нормы освещённости (СНиП)
-
-| Помещение | Норма (лк) |
-|-----------|------------|
-| Спальня | 150 |
-| Гостиная | 200 |
-| Кухня | 300 |
-| Офис/Кабинет | 300 |
-| Ванная | 250 |
-| Детская | 200 |
-
-## 📁 Структура проекта
+## 📁 Project Structure
 
 ```
 src/
 ├── components/
-│   ├── ui/              # Базовые UI-компоненты
-│   │   ├── Card.tsx
-│   │   ├── Button.tsx
-│   │   ├── Input.tsx
-│   │   ├── Slider.tsx
-│   │   ├── Select.tsx
-│   │   └── ColorPicker.tsx
-│   ├── calculator/      # Компоненты калькулятора
-│   │   ├── RoomDimensionsForm.tsx
-│   │   ├── RoomTypeSelector.tsx
-│   │   ├── BulbTypeSelector.tsx
-│   │   ├── SurfaceColorsForm.tsx
-│   │   └── ResultsPanel.tsx
-│   ├── visualization/   # Визуализация комнаты
-│   │   └── RoomVisualization.tsx
-│   └── layout/          # Layout-компоненты
-│       ├── Header.tsx
-│       └── AnimatedBackground.tsx
-├── hooks/
-│   └── useLightingCalculator.ts  # Хук состояния калькулятора
-├── lib/
-│   ├── lighting-calculator.ts    # Формулы расчёта
-│   └── utils.ts                  # Утилиты
-├── types/
-│   └── lighting.ts               # Типы и константы
-├── App.tsx
-├── main.tsx
-└── index.css
+│   ├── ui/              # Base UI components
+│   ├── calculator/      # Calculator forms
+│   ├── visualization/   # Room visualization
+│   └── layout/          # Layout components
+├── context/             # Global state context
+├── hooks/               # Custom hooks
+├── lib/                 # Calculation utilities
+├── tests/               # Test files
+└── types/               # TypeScript types
 ```
 
-## 🔧 Конфигурация
+## 🧮 Calculation Formula
 
-### Tailwind CSS (custom theme)
+Calculations are based on the formula:
 
-Кастомные цвета, тени и анимации настроены в `index.css` с использованием синтаксиса Tailwind v4.
+```
+Φ = (E × S × K × Z) / η
+```
 
-### TypeScript
+Where:
+- **Φ** — luminous flux per lamp (lm)
+- **E** — illuminance norm (lx) — depends on room type
+- **S** — room area (m²)
+- **K** — maintenance factor (1.2)
+- **Z** — uniformity factor (1.1)
+- **η** — utilization factor
 
-Строгая типизация всех компонентов, хуков и утилит.
+### Illuminance Norms (SNiP)
 
-## 🌐 Деплой
+| Room Type | Norm (lx) |
+|-----------|-----------|
+| Bedroom | 150 |
+| Living Room | 200 |
+| Kitchen | 300 |
+| Office | 300 |
+| Bathroom | 250 |
+| Nursery | 200 |
 
-Приложение готово к деплою на **Vercel**, **Netlify** или любой другой платформе:
+## 🛠 Technologies
+
+- **React 18** + TypeScript
+- **Tailwind CSS v4** — custom theme styling
+- **Framer Motion** — smooth animations
+- **Lucide Icons** — minimalistic icons
+- **Vite** — fast build and HMR
+- **Vitest** + React Testing Library — testing
+
+## 📦 Build Commands
 
 ```bash
-# Сборка
+# Development
+npm run dev
+
+# Production build
 npm run build
 
-# Папка dist готова к деплою
+# Preview production build
+npm run preview
+
+# Linting
+npm run lint
+
+# Tests
+npm run test:run
 ```
 
-### Vercel
+## 🏷️ Versioning
+
+This project uses Semantic Versioning with automatic CHANGELOG generation.
 
 ```bash
-npm i -g vercel
-vercel
+# Patch release (1.0.0 → 1.0.1)
+npm run release
+
+# Minor release (1.0.0 → 1.1.0)
+npm run release:minor
+
+# Major release (1.0.0 → 2.0.0)
+npm run release:major
 ```
 
-## 📱 Адаптивность
+See [VERSIONING.md](./VERSIONING.md) for details.
 
-- **Desktop** — двухколоночный layout (параметры слева, визуализация справа)
-- **Mobile** — визуализация перемещается наверх, параметры занимают всю ширину
-- **Sticky sidebar** — на десктопе результаты «прилипают» при скролле
-
-## 🎯 Фичи
-
-- [x] Ввод параметров комнаты (длина, ширина, высота)
-- [x] Выбор типа помещения с пресетами
-- [x] Выбор типа ламп (LED, люминесцентные, накаливания)
-- [x] Коэффициенты отражения поверхностей (визуальная палитра)
-- [x] Визуализация схемы комнаты
-- [x] Анимированные счётчики результатов
-- [x] Живой фон с плавающими световыми пятнами
-- [x] Сохранение в localStorage
-- [x] Shareable URL (копирование ссылки)
-- [x] Полная адаптивность
-
-## 📄 Лицензия
+## 📄 License
 
 MIT
 
-## 👨‍💻 Автор
+## 👨‍💻 Author
 
-Создано с ❤️ для расчёта идеального освещения
+Created with ❤️ for calculating ideal lighting
