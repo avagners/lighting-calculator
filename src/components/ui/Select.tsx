@@ -103,7 +103,7 @@ export function Select({
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="input-base appearance-none cursor-pointer pr-10"
+          className="input-base appearance-none cursor-pointer pr-10 [&>option]:bg-surface [&>option]:text-white"
         >
           {options.map((option) => (
             <option key={option.value} value={option.value}>

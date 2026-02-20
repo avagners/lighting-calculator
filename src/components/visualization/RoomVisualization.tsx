@@ -20,9 +20,9 @@ export function RoomVisualization() {
   const accentColor = selectedRoom?.accentColor || '#FFB347';
 
   // SVG viewBox настройки
-  const padding = 40;
-  const viewBoxWidth = 400;
-  const viewBoxHeight = 300;
+  const padding = 50;
+  const viewBoxWidth = 500;
+  const viewBoxHeight = 380;
   const innerWidth = viewBoxWidth - padding * 2;
   const innerHeight = viewBoxHeight - padding * 2;
 
@@ -192,11 +192,11 @@ export function RoomVisualization() {
             y={offsetY + drawHeight + 40}
             textAnchor="middle"
             fill="rgba(255,255,255,0.5)"
-            fontSize={12}
+            fontSize={state.length >= 10 ? 10 : 12}
           >
             {state.length} м
           </text>
-          
+
           {/* Ширина */}
           <line
             x1={offsetX - 25}
@@ -213,7 +213,7 @@ export function RoomVisualization() {
             y={offsetY + drawHeight / 2}
             textAnchor="middle"
             fill="rgba(255,255,255,0.5)"
-            fontSize={12}
+            fontSize={state.width >= 10 ? 10 : 12}
             transform={`rotate(-90, ${offsetX - 35}, ${offsetY + drawHeight / 2})`}
           >
             {state.width} м

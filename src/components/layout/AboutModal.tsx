@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { X, Book, Ruler, Lightbulb, CheckCircle } from 'lucide-react';
+import { version } from '../../version.json';
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -141,7 +142,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
         {/* Footer */}
         <div className="sticky bottom-0 glass rounded-b-2xl p-4 border-t border-white/10">
           <p className="text-xs text-white/40 text-center">
-            Версия приложения: v1.1.0 • Расчёт по СНиП 23-05-95
+            Версия приложения: v{version} • Расчёт по СНиП 23-05-95
           </p>
         </div>
       </motion.div>

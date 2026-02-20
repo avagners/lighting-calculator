@@ -146,11 +146,21 @@ export function ResultsPanel() {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex justify-between items-center py-2"
+            className="flex justify-between items-center py-2 group relative"
           >
             <span className="text-sm text-white/60 flex items-center gap-2">
               <Zap size={14} />
               Эффективность
+              {/* Tooltip */}
+              <span className="relative group-hover:opacity-100 opacity-0 transition-opacity cursor-help">
+                <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" strokeWidth="2"/>
+                  <path strokeWidth="2" d="M12 16v-4m0-4h.01"/>
+                </svg>
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 text-xs text-white bg-black/90 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                  Сколько люмен света на 1 Вт мощности
+                </span>
+              </span>
             </span>
             <span className="text-sm font-medium text-white">
               {bulbData.lumensPerWatt} лм/Вт

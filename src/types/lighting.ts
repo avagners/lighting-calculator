@@ -85,7 +85,7 @@ export const BULB_TYPES: BulbTypeData[] = [
     id: 'led-warm',
     name: 'LED Warm',
     nameRu: 'LED Теплый (2700K)',
-    lumensPerWatt: 100,
+    lumensPerWatt: 110, // Современные LED: 100-120 лм/Вт
     colorTemp: 2700,
     description: 'Теплый уютный свет',
   },
@@ -93,7 +93,7 @@ export const BULB_TYPES: BulbTypeData[] = [
     id: 'led-neutral',
     name: 'LED Neutral',
     nameRu: 'LED Нейтральный (4000K)',
-    lumensPerWatt: 100,
+    lumensPerWatt: 110, // Современные LED: 100-120 лм/Вт
     colorTemp: 4000,
     description: 'Естественный дневной свет',
   },
@@ -101,7 +101,7 @@ export const BULB_TYPES: BulbTypeData[] = [
     id: 'led-cold',
     name: 'LED Cold',
     nameRu: 'LED Холодный (6500K)',
-    lumensPerWatt: 100,
+    lumensPerWatt: 110, // Современные LED: 100-120 лм/Вт
     colorTemp: 6500,
     description: 'Холодный яркий свет',
   },
@@ -109,7 +109,7 @@ export const BULB_TYPES: BulbTypeData[] = [
     id: 'fluorescent',
     name: 'Fluorescent',
     nameRu: 'Люминесцентные',
-    lumensPerWatt: 60,
+    lumensPerWatt: 65, // Люминесцентные: 60-80 лм/Вт
     colorTemp: 4000,
     description: 'Энергосберегающие лампы',
   },
@@ -117,7 +117,7 @@ export const BULB_TYPES: BulbTypeData[] = [
     id: 'incandescent',
     name: 'Incandescent',
     nameRu: 'Лампы накаливания',
-    lumensPerWatt: 15,
+    lumensPerWatt: 12, // Лампы накаливания: 10-15 лм/Вт
     colorTemp: 2700,
     description: 'Классический теплый свет',
   },
