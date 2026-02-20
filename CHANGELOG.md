@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/avagners/lighting-calculator/compare/v1.2.0...v1.2.1) (2026-02-20)
+
+
+### 📝 Documentation
+
+* обновить версию до 1.2.0 ([1d178f7](https://github.com/avagners/lighting-calculator/commit/1d178f7d9d6d92b6c07da0eb98d0bdc64a7196ee))
+
 ## [1.2.0](https://github.com/avagners/lighting-calculator/compare/v1.1.0...v1.2.0) (2026-02-20)
 
 
