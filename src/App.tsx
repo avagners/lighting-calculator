@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Card } from './components/ui/Card';
 import { RoomDimensionsForm } from './components/calculator/RoomDimensionsForm';
@@ -11,12 +11,14 @@ import { RoomVisualization } from './components/visualization/RoomVisualization'
 import { ResultsPanel } from './components/calculator/ResultsPanel';
 import { Header } from './components/layout/Header';
 import { AnimatedBackground } from './components/layout/AnimatedBackground';
+import { AboutModal } from './components/layout/AboutModal';
 import { LightingCalculatorProvider, useLightingCalculator } from './context';
 import { ROOM_TYPES } from './types/lighting';
 import { version } from './version.json';
 
 function AppContent() {
   const { state } = useLightingCalculator();
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   // Получаем акцентный цвет текущего типа помещения
   const accentColor = useMemo(() => {
@@ -31,7 +33,7 @@ function AppContent() {
       
       {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 pb-12">
-        <Header />
+        <Header onOpenAbout={() => setIsAboutOpen(true)} />
         
         <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {/* Левая колонка - Параметры */}
@@ -106,6 +108,13 @@ function AppContent() {
           <p className="text-xs text-white/20">v{version}</p>
         </motion.footer>
       </div>
+      
+      {/* Модальное окно "О проекте" */}
+      <AnimatePresence>
+        {isAboutOpen && (
+          <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
