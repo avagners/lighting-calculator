@@ -13,6 +13,7 @@ import { Header } from './components/layout/Header';
 import { AnimatedBackground } from './components/layout/AnimatedBackground';
 import { LightingCalculatorProvider, useLightingCalculator } from './context';
 import { ROOM_TYPES } from './types/lighting';
+import { version } from './version.json';
 
 function AppContent() {
   const { state } = useLightingCalculator();
@@ -99,9 +100,10 @@ function AppContent() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-12 text-center text-white/30 text-sm"
+          className="mt-12 text-center text-white/30 text-sm space-y-2"
         >
           <p>Расчет производится по СНиП 23-05-95 «Естественное и искусственное освещение»</p>
+          <p className="text-xs text-white/20">v{version}</p>
         </motion.footer>
       </div>
     </div>
